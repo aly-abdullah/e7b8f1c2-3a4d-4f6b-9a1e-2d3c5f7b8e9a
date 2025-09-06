@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>الابداع السعودي</title>
-        <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
     <script src="scripto1.js"></script>
     <script src="jquery-3.7.1.slim.min.js"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="js-card">
-      <img src="white-logo.png"/>
+      <img src="white-logo.png" />
       <span id="js-header">انشاء فاتورة</span>
-      <input id="js-name" placeholder="ادخل اسم العميل">
-      <input id="js-phone-number" placeholder="ادخل رقم هاتف العميل">
-      <textarea id="js-additional-info" placeholder="معلومات اضافية" rows="4"></textarea>
-      <textarea id="js-conditions" placeholder="الشروط" rows="4">
-        شرط 1
-        شرط 2
-        شرط 3
-      </textarea>
+      <input id="js-name" placeholder="ادخل اسم العميل" />
+      <input id="js-phone-number" placeholder="ادخل رقم هاتف العميل" />
+      <div id="js-additional-info-container">
+        <textarea id="js-additional-info" placeholder="معلومات اضافية">
+التجارب تنمي المواهب، وتمحو المعايب، وتزيد البصير بصراً</textarea
+        >
+        <span id="js-clean-additional-info">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M17 1l4 4-4 4" />
+            <path d="M21 5H9a7 7 0 0 0-7 7v4" />
+            <path d="M7 23l-4-4 4-4" />
+            <path d="M3 19h12a7 7 0 0 0 7-7v-4" /></svg
+        ></span>
+      </div>
+      <div id="js-conditions-container">
+        <textarea id="js-conditions" placeholder="الشروط">
+التجارب تنمي المواهب، وتمحو المعايب، وتزيد البصير بصراً</textarea
+        >
+        <span id="js-clean-conditions">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M17 1l4 4-4 4" />
+            <path d="M21 5H9a7 7 0 0 0-7 7v4" />
+            <path d="M7 23l-4-4 4-4" />
+            <path d="M3 19h12a7 7 0 0 0 7-7v-4" />
+          </svg>
+        </span>
+      </div>
       <button onclick="printPDF()">تحميل و طباعة</button>
     </div>
   </body>
-</html
+</html>

@@ -144,3 +144,67 @@ function printPDF() {
   pdfMake.createPdf(docDefinition).download();
   pdfMake.createPdf(docDefinition).print();
 }
+
+$(function () {
+  const $textareas = $("textarea");
+  const maxRows = 4;
+
+  function getLineHeight($el) {
+    let lh = parseInt($el.css("line-height"));
+    if (!lh || isNaN(lh)) {
+      const $tmp = $("<span>M</span>")
+        .css({
+          font: $el.css("font"),
+          visibility: "hidden",
+          position: "absolute",
+          top: -9999,
+          left: -9999,
+          whiteSpace: "nowrap",
+        })
+        .appendTo("body");
+      lh = $tmp.height();
+      $tmp.remove();
+    }
+    return lh;
+  }
+
+  function adjust($el) {
+    $el.css("height", "auto");
+
+    const lineHeight = getLineHeight($el) || 22;
+    const padding =
+      (parseInt($el.css("padding-top")) || 0) +
+      (parseInt($el.css("padding-bottom")) || 0);
+    const border =
+      (parseInt($el.css("border-top-width")) || 0) +
+      (parseInt($el.css("border-bottom-width")) || 0);
+
+    const maxHeight = lineHeight * maxRows + padding + border;
+    const scrollHeight = $el[0].scrollHeight;
+
+    if (scrollHeight <= maxHeight) {
+      $el.css({ height: scrollHeight + "px", "overflow-y": "hidden" });
+    } else {
+      $el.css({ height: maxHeight + "px", "overflow-y": "auto" });
+    }
+  }
+
+  $textareas
+    .each(function () {
+      adjust($(this));
+    })
+    .on("input paste cut", function () {
+      const $t = $(this);
+      setTimeout(() => adjust($t), 0);
+    });
+});
+
+$(document).ready(function () {
+  $("#js-clean-additional-info").click(function () {
+    $("#js-additional-info").val("").trigger("input");
+  });
+
+  $("#js-clean-conditions").click(function () {
+    $("#js-conditions").val("").trigger("input");
+  });
+});

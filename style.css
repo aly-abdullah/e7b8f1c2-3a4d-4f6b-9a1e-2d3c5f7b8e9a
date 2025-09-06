@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'almarai-bold';
+  src: url(Almarai-Bold.ttf);
+}
+@font-face {
+  font-family: 'almarai-regular';
+  src: url(Almarai-Regular.ttf);
+}
+
+:root {
+  --blue-color: #0093ff;
+  --blue-hover-color: #005491;
+}
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #101010;
+    }
+
+    #js-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 30px;
+      margin-top: 50px;
+            width: 30%;
+    }
+
+    span {
+      color: var(--blue-color);
+      text-align: center;
+      font-size: 33px;
+      margin-bottom: 30px;
+            font-family: 'almarai-bold', sans-serif !important;
+    }
+
+    input, textarea, button {
+      padding: 10px 15px;
+      border-radius: 10px;
+            font-family: 'almarai-regular', sans-serif !important;
+            background-color: #161616;
+            border: none;
+            font-size: 17px;
+            line-height: 22px;
+            outline: none;
+            text-align: center;
+    }
+
+    input {
+                  color: var(--blue-color);
+
+    }
+
+    textarea {
+      resize: vertical;
+                        color: var(--blue-color);
+
+    }
+
+    button {
+      background-color: var(--blue-color);
+      color: white;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--blue-hover-color);
+    }
+
+/* Mobile-first: start with the smallest screens */
+@media (max-width: 576px) {
+    #js-card {
+        width: 90%; /* almost full width on small phones */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    #js-card {
+        width: 80%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    #js-card {
+        width: 70%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    #js-card {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    #js-card {
+        width: 50%;
+    }
+}
+
+img {
+    width: 100px;
+    margin: auto;
+}

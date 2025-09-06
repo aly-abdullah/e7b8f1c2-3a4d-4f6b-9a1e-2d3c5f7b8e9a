@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>الابداع السعودي</title>
+        <link rel="icon" type="image/png" href="favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
+    <script src="scripto1.js"></script>
+    <script src="jquery-3.7.1.slim.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="js-card">
+      <img src="white-logo.png"/>
+      <span id="js-header">انشاء فاتورة</span>
+      <input id="js-name" placeholder="ادخل اسم العميل">
+      <input id="js-phone-number" placeholder="ادخل رقم هاتف العميل">
+      <textarea id="js-additional-info" placeholder="معلومات اضافية" rows="4"></textarea>
+      <textarea id="js-conditions" placeholder="الشروط" rows="4">
+        شرط 1
+        شرط 2
+        شرط 3
+      </textarea>
+      <button onclick="printPDF()">تحميل و طباعة</button>
+    </div>
+  </body>
+</html
